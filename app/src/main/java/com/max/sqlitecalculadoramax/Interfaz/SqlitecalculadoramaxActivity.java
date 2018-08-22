@@ -6,6 +6,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.max.sqlitecalculadoramax.Listener.ListenerHistorial;
+import com.max.sqlitecalculadoramax.Listener.ListenerResta;
+import com.max.sqlitecalculadoramax.Listener.ListenerSuma;
 import com.max.sqlitecalculadoramax.R;
 
 public class SqlitecalculadoramaxActivity extends AppCompatActivity {
@@ -13,13 +16,19 @@ public class SqlitecalculadoramaxActivity extends AppCompatActivity {
     private TextView tv1;
     private Button botonSumar, botonResta, botonHistorial;
 
-    //Getter
+    //Getter & Setter
     public EditText getEt1() {
         return et1;
     }
-
     public EditText getEt2() {
         return et2;
+    }
+    public TextView getTv1() {
+        return tv1;
+    }
+
+    public void setTv1(TextView tv1) {
+        this.tv1 = tv1;
     }
 
     @Override
@@ -34,5 +43,12 @@ public class SqlitecalculadoramaxActivity extends AppCompatActivity {
         botonResta=findViewById(R.id.botonResta);
         botonHistorial=findViewById(R.id.botonHistorial);
         //Escuchadores
+        ListenerSuma listenerSuma= new ListenerSuma(this);
+        //ListenerResta listenerResta= new ListenerResta(this);
+       // ListenerHistorial listenerHistorial= new ListenerHistorial(this);
+        //Seteo botones
+        botonSumar.setOnClickListener(listenerSuma);
+       // botonResta.setOnClickListener(listenerResta);
+        //botonHistorial.setOnClickListener(listenerHistorial);
     }
 }

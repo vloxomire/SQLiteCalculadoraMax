@@ -19,5 +19,7 @@ public class ListenerSuma implements View.OnClickListener{
         Integer nro2=Integer.parseInt(valor2);
         Integer resulSuma=nro1 + nro2;
         String resulString=String.valueOf(resulSuma);
+        context.getTv1().setText(resulString);
+
     }
 }
