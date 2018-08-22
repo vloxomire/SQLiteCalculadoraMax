@@ -24,5 +24,6 @@ public class SqlitecalculadoramaxActivity extends AppCompatActivity {
         botonSumar=findViewById(R.id.botonSumar);
         botonResta=findViewById(R.id.botonResta);
         botonHistorial=findViewById(R.id.botonHistorial);
+        //Escuchadores
     }
 }
