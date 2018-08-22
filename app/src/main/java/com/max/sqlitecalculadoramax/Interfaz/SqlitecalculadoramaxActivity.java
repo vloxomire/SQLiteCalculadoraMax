@@ -44,11 +44,11 @@ public class SqlitecalculadoramaxActivity extends AppCompatActivity {
         botonHistorial=findViewById(R.id.botonHistorial);
         //Escuchadores
         ListenerSuma listenerSuma= new ListenerSuma(this);
-        //ListenerResta listenerResta= new ListenerResta(this);
-       // ListenerHistorial listenerHistorial= new ListenerHistorial(this);
+        ListenerResta listenerResta= new ListenerResta(this);
+        ListenerHistorial listenerHistorial= new ListenerHistorial(this);
         //Seteo botones
         botonSumar.setOnClickListener(listenerSuma);
-       // botonResta.setOnClickListener(listenerResta);
-        //botonHistorial.setOnClickListener(listenerHistorial);
+        botonResta.setOnClickListener(listenerResta);
+        botonHistorial.setOnClickListener(listenerHistorial);
     }
 }
