@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SqlitecalculadoramaxActivity">
+    tools:context=".Interfaz.SqlitecalculadoramaxActivity">
 
     <EditText
         android:id="@+id/et1"
@@ -65,13 +65,13 @@
         tools:layout_editor_absoluteY="367dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/botonHistorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="194dp"
         android:layout_toStartOf="@+id/botonResta"
-        android:text="Button"
+        android:text="Historial"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="441dp" />
 
