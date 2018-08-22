@@ -13,6 +13,15 @@ public class SqlitecalculadoramaxActivity extends AppCompatActivity {
     private TextView tv1;
     private Button botonSumar, botonResta, botonHistorial;
 
+    //Getter
+    public EditText getEt1() {
+        return et1;
+    }
+
+    public EditText getEt2() {
+        return et2;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
