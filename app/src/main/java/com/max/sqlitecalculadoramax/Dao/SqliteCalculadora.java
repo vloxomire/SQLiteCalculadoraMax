@@ -19,25 +19,27 @@ public class SqliteCalculadora extends SQLiteOpenHelper{
     }
         @Override
         public void onCreate (SQLiteDatabase db){
-            String query="CREATE TABLE `calculadora` ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `operacion` TEXT NOT NULL )";
+            String query="CREATE TABLE historial ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `operacion` TEXT NOT NULL )";
             db.execSQL(query);
         }
 
         @Override
         public void onUpgrade (SQLiteDatabase db,int oldVersion, int newVersion){
+            String query="CREATE TABLE `historial`(`Id`INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `operacion` TEXT NOT NULL)";
+            db.execSQL(query);
         }
 
         private void conectar(){
-        conexion=getWritableDatabase();
+        conexion = getWritableDatabase();
         }
         private void desconectar(){
         conexion.close();
         }
-        public void guardarOperaciones(Operacion oper){
+        public void guardarOperacionSinSQLite(Operacion op){
         this.conectar();
-        ContentValues row= new ContentValues();
-        row.put("operacion", oper);
-        conexion.insert("operacion",null,row);
+        ContentValues fila= new ContentValues();
+        fila.put("operacion", op.getOperacion());
+        conexion.insert("historial",null,fila);
         this.desconectar();
         }
     }
