@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Interfaz.SqlitebaseActivity"></activity>
+        <activity android:name=".Interfaz.SqlitebaseActivity" />
+        <activity android:name=".Interfaz.Detalle"></activity>
     </application>
 
 </manifest>

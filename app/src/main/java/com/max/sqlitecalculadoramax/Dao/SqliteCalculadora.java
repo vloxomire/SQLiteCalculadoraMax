@@ -17,24 +17,24 @@ public class SqliteCalculadora extends SQLiteOpenHelper{
     }
         @Override
         public void onCreate (SQLiteDatabase db){
-
+            String query="CREATE TABLE `calculadora` ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `operacion` TEXT NOT NULL )";
+            db.execSQL(query);
         }
 
         @Override
         public void onUpgrade (SQLiteDatabase db,int oldVersion, int newVersion){
-        String query="CREATE TABLE `calculadora` ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `operacion` TEXT NOT NULL )";
-        db.execSQL(query);
         }
+
         private void conectar(){
         conexion=getWritableDatabase();
         }
         private void desconectar(){
         conexion.close();
         }
-        public void guardarOperaciones(){
+        public void guardarOperaciones(String oper){
         this.conectar();
         ContentValues row= new ContentValues();
-        row.put("operacion", op);
+        row.put("operacion", oper);
         conexion.insert("operacion",null,row);
         this.desconectar();
         }
