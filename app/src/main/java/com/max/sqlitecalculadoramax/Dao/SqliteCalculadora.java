@@ -34,7 +34,7 @@ public class SqliteCalculadora extends SQLiteOpenHelper{
         public void guardarOperaciones(){
         this.conectar();
         ContentValues row= new ContentValues();
-        row.put("operacion", oper);
+        row.put("operacion", op);
         conexion.insert("operacion",null,row);
         this.desconectar();
         }
