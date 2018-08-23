@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.max.sqlitecalculadoramax.Models.Operacion;
+
 public class SqliteCalculadora extends SQLiteOpenHelper{
     private static final String DBNAME="calculadora";
     private static final Integer DBVERSION=1;
@@ -31,7 +33,7 @@ public class SqliteCalculadora extends SQLiteOpenHelper{
         private void desconectar(){
         conexion.close();
         }
-        public void guardarOperaciones(String oper){
+        public void guardarOperaciones(Operacion oper){
         this.conectar();
         ContentValues row= new ContentValues();
         row.put("operacion", oper);
