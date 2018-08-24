@@ -2,10 +2,13 @@ package com.max.sqlitecalculadoramax.Dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.max.sqlitecalculadoramax.Models.Operacion;
+
+import java.util.ArrayList;
 
 public class SqliteCalculadora extends SQLiteOpenHelper{
     private static final String DBNAME="calculadora";
@@ -42,4 +45,11 @@ public class SqliteCalculadora extends SQLiteOpenHelper{
         conexion.insert("historial",null,fila);
         this.desconectar();
         }
-    }
+    public ArrayList<Operacion> getOperaciones() {
+        ArrayList<Operacion> operacionArrayList = new ArrayList<>();
+        this.conectar();
+        String query = "";
+        query ="select operacion, id from historial";
+        Cursor cursor= conexion.rawQuery(query, null);}
+}
+
