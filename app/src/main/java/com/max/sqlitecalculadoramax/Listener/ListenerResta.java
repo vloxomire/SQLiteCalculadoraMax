@@ -21,7 +21,7 @@ public class ListenerResta implements View.OnClickListener{
         Integer nro2=Integer.parseInt(context.getEt2().getText().toString());
         Integer resResta=nro1 - nro2;
         context.getTv1().setText(String.valueOf(resResta));
-        Operacion operacion= new Operacion(null,(nro1 +" - "+ nro2 +"="+resResta));
+        Operacion operacion= new Operacion(null,(nro1 +" - "+ nro2 +" = "+resResta));
         sqliteCalculadora.guardarOperacionSinSQLite(operacion);
     }
 }
