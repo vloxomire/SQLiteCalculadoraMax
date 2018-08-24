@@ -24,7 +24,7 @@ public class ListenerSuma implements View.OnClickListener{
         Integer resulSuma=nro1 + nro2;
         String resulString=String.valueOf(resulSuma);
         context.getTv1().setText(resulString);
-        Operacion operacion = new Operacion(null,(nro1, "+" nro2 + resulSuma ));
-
+        Operacion operacion = new Operacion(null,(nro1 + " + " + nro2 + " = " + resulSuma ));
+        sqliteCalculadora.guardarOperacionSinSQLite(operacion);
     }
 }
