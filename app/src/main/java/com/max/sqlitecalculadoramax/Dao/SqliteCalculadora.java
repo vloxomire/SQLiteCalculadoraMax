@@ -55,6 +55,8 @@ public class SqliteCalculadora extends SQLiteOpenHelper{
             Operacion unaOperacion = new Operacion(cursor.getInt(cursor.getColumnIndex("id")),cursor.getString(cursor.getColumnIndex("operacion")));
             operacionArrayList.add(unaOperacion);
         }
+        this.desconectar();
+        return operacionArrayList;
     }
 }
 
