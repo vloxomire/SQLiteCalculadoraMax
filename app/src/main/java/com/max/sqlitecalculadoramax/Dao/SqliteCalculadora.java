@@ -52,7 +52,7 @@ public class SqliteCalculadora extends SQLiteOpenHelper{
         query ="select operacion, id from historial";
         Cursor cursor= conexion.rawQuery(query, null);
         while(cursor.moveToNext()){
-            Operacion unaOperacion = new Operacion(cursor.getInt(cursor.getColumnIndex("id")),cursor.getString(cursor.getColumnIndex("operacion")));
+            Operacion unaOperacion = new Operacion(cursor.getInt(cursor.getColumnIndex("Id")),cursor.getString(cursor.getColumnIndex("operacion")));
             operacionArrayList.add(unaOperacion);
         }
         this.desconectar();

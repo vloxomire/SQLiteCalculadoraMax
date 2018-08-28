@@ -44,10 +44,10 @@ public class AdapterOperacion extends BaseAdapter {
         miLayoutInflater=(LayoutInflater)this.context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         view = miLayoutInflater.inflate(R.layout.calculadoralista, viewGroup, false);
         TextView id, operaciones;
-        id=view.findById(R.id.celdaId);
-        operacion=view.findById(R.id.celdaOperacion);
+        id=view.findViewById(R.id.celdaId);
+        operaciones =view.findViewById(R.id.celdaOperacion);
         id.setText(operacionArrayList.get(position).getId());
-        operacion.settext(operacionArrayList.get(position).getPosition());
+        operaciones.setText(operacionArrayList.get(position).getOperacion());
         return view;
     }
 }

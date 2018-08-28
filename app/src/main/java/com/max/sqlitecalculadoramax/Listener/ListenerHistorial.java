@@ -1,7 +1,9 @@
 package com.max.sqlitecalculadoramax.Listener;
 
+import android.content.Intent;
 import android.view.View;
 
+import com.max.sqlitecalculadoramax.Interfaz.SqlitebaseActivity;
 import com.max.sqlitecalculadoramax.Interfaz.SqlitecalculadoramaxActivity;
 
 public class ListenerHistorial implements View.OnClickListener {
@@ -13,6 +15,7 @@ public class ListenerHistorial implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-
+        Intent sqlitebaseActivity= new Intent(context, SqlitebaseActivity.class);
+        context.startActivity(sqlitebaseActivity);
     }
 }
