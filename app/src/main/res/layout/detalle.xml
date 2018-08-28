@@ -5,8 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Interfaz.Detalle">
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celdaId"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_Lista_Operaciones"/>
+        android:id="@+id/celdaOperacion"/>
+
 </LinearLayout>
