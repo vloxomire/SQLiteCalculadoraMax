@@ -17,14 +17,10 @@ import java.util.ArrayList;
 public class AdapterOperacion extends BaseAdapter {
     private ArrayList<Operacion> operacionArrayList;
     SqlitebaseActivity context;
-    private OperacionListener operacionListener;
-
-
 
     public AdapterOperacion(ArrayList<Operacion> operacionArrayList, SqlitebaseActivity context) {
         this.operacionArrayList = operacionArrayList;
         this.context = context;
-        this.operacionListener= new OperacionListener();
     }
 
     @Override
@@ -43,11 +39,13 @@ public class AdapterOperacion extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View view, ViewGroup viewGroup) {
         LayoutInflater miLayoutInflater;
         miLayoutInflater=(LayoutInflater)this.context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        convertView = miLayoutInflater.inflate(R.layout.calculadoralista, parent, false);
-        TextView id, operacion;
-        id= itemView.findViewById(R.id.cel)
+        view = miLayoutInflater.inflate(R.layout.calculadoralista, viewGroup, false);
+        TextView StringOperaciones;
+        StringOperaciones= view.findViewById(R.id.tv_Lista_Operaciones);
+        StringOperaciones.setText();
+        return view;
     }
 }
