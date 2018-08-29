@@ -15,7 +15,7 @@ public class SqlitebaseActivity extends AppCompatActivity {
 private SqliteCalculadora sqliteCalculadora;
 private ArrayList<Operacion> operacionArrayList;
 private AdapterOperacion adapterOperacion;
-private ListView listView;
+private ListView listViewOperacion;
 
     public ArrayList<Operacion> getOperacionArrayList() {
         return operacionArrayList;
@@ -25,10 +25,13 @@ private ListView listView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculadoralista);
-
-        Bundle bolsa= new Bundle();
-        bolsa = getIntent().getExtras();
+        
         SqliteCalculadora sqliteCalculadora= new SqliteCalculadora(this);
         operacionArrayList=sqliteCalculadora.getOperaciones();
+        adapterOperacion = new AdapterOperacion(operacionArrayList, this);
+
+        listViewOperacion=findViewById(R.id.Lista);
+        listViewOperacion.setAdapter(adapterOperacion);
+
     }
 }
