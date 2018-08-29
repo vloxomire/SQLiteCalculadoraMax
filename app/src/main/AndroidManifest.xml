@@ -18,6 +18,10 @@
         </activity>
         <activity android:name=".Interfaz.SqlitebaseActivity" />
         <activity android:name=".Interfaz.Detalle"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="6a115a376f545c35d2c8cda0e7f21cbea696cd54"
+            />
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

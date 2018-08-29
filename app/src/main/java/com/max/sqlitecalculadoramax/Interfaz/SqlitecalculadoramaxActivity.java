@@ -10,7 +10,8 @@ import com.max.sqlitecalculadoramax.Listener.ListenerHistorial;
 import com.max.sqlitecalculadoramax.Listener.ListenerResta;
 import com.max.sqlitecalculadoramax.Listener.ListenerSuma;
 import com.max.sqlitecalculadoramax.R;
-
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 public class SqlitecalculadoramaxActivity extends AppCompatActivity {
     private EditText et1, et2;
     private TextView tv1;
@@ -35,7 +36,7 @@ public class SqlitecalculadoramaxActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sqlitecalculadoramax);
-
+        Fabric.with(this, new Crashlytics());
         et1=findViewById(R.id.et1);
         et2=findViewById(R.id.et2);
         tv1=findViewById(R.id.tv1);
